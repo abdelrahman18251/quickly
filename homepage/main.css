@@ -1,0 +1,71 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import url(https://fonts.googleapis.com/css?family=Lato:700,300);
+@font-face {
+    font-family: "Ionicons";
+    src: url("../assets/fonts/ionicons.eot?v=2.0.1");
+    src: url("../assets/fonts/ionicons.eot?v=2.0.1#iefix") format("embedded-opentype"), url("../lib/ionic/fonts/ionicons.ttf?v=2.0.1") format("truetype"), url("../lib/ionic/fonts/ionicons.woff?v=2.0.1") format("woff"), url("../lib/ionic-/fonts/ionicons.woff") format("woff"), url("../lib/ionic/fonts/ionicons.svg?v=2.0.1#Ionicons") format("svg");
+    font-weight: normal;
+    font-style: normal; }
+@font-face {
+    font-family: 'DroidKufiRegular';
+    src: url('../fonts/DroidKufiRegular.eot');
+    src: url('../fonts/DroidKufiRegular.eot') format('embedded-opentype'),
+        url('../fonts/DroidKufiRegular.woff2') format('woff2'),
+        url('../fonts/DroidKufiRegular.woff') format('woff'),
+        url('../fonts/DroidKufiRegular.ttf') format('truetype'),
+        url('../fonts/DroidKufiRegular.svg#DroidKufiRegular') format('svg');
+}
+@font-face {
+    font-family: 'DroidNaskh';
+
+    src:  url('../fonts/DroidNaskh-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'flat-jooza';
+
+    src:  url('../fonts/flat-jooza-regular.ttf') format('truetype');
+}
+/* ==========================================================================
+   Gobal Styles
+   ========================================================================== */
+/* ==========================================================================
+   Google Font Loader
+   ========================================================================== */
+/* ==========================================================================
+   Common Styles
+   ========================================================================== */
+body {
+    font-family: 'flat-jooza','DroidKufiRegular', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 24px;
+    overflow-x: hidden;
+    /*background-image: url(../img/bg.jpg);*/
+    /*direction: rtl;*/
+    background-repeat: no-repeat;
+
+    /* fixing the overflow duting animation */
+
+}
+
+@media screen and (min-width:760px) and (max-width:980px){
+    .offer-hover{
+        margin: 20px 4% 0 !important;
+    }
+    .ads-728-90{
+        display: none;
+    }
+    .Advertisement{
+        display: none;
+    }
+
+}
+@media screen and (max-width:759px){
+
+    .ads-728-90{
+        display: none;
+    }
+    .ads-300-250{
+        display: block;
+    }
+}

@@ -1,0 +1,208 @@
+body {
+    font-family: "Droid Arabic Kufi", 'Droid Sans', sans-serif
+}
+
+a:hover {
+    text-decoration: none
+}
+
+
+
+/* Start Head Box */
+
+.head-box {
+    text-align: center
+}
+
+.head-box .h1 {
+    font-size: 40px;
+    font-weight: bold;
+    color: #695f5f;
+    line-height: 2;
+}
+
+.head-box .title-trick {
+    width: 200px;
+    margin: 0 auto 20px;
+    text-align: center
+}
+
+.head-box .title-trick .fa {
+    font-size: 40px;
+    line-height: 20px;
+    color: #3498db
+}
+
+.head-box .title-trick .l-line {
+  float: left
+}
+
+.head-box .title-trick .r-line {
+  float: right
+}
+
+.head-box .title-trick .l-line,
+.head-box .title-trick .r-line {
+  background-color: #000;
+  height: 2px;
+  text-align: center;
+  width: 80px;
+  margin-top: 10px
+}
+
+/* End Head Box */
+
+/* Start Homepage */
+
+.home-page hr {
+    margin-top: 12px;
+    margin-bottom: 12px
+}
+
+/* End Homepage */
+
+
+
+/* Start Global Elements */
+
+.post-tags i {
+    position: relative;
+    top: 2px;
+    left: 4px
+}
+
+.post-tags ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block
+}
+
+.post-tags ul li {
+    display: inline-block;
+    font-size: 12px;
+    background-color: #2980b9;
+    color: #FFF;
+    margin-left: 5px;
+    padding: 3px 8px;
+    font-weight: bold;
+    border-radius: 5px;
+    font-family: Tahoma, Arial;
+}
+
+.post-tags ul li a {
+    color: #FFF
+}
+
+/* End Global Elements */
+
+/* Start Elzero Advices */
+
+.elzero-advices .main-post h3 {
+    margin: 15px 0;
+    font-size: 20px
+}
+
+.elzero-advices .main-post h3:hover {
+    color: #2980b9
+}
+
+.elzero-advices .main-post h3 a:hover {
+    text-decoration: none
+}
+
+.elzero-advices hr {
+    margin-top: 14px;
+    margin-bottom: 14px
+}
+
+/* End Elzero Advices */
+
+/* Start Main Single Page */
+
+.main-single {
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+.main-single .post-title {
+    margin: 50px 0 30px;
+    display: inline-block;
+    border-bottom: 2px solid #888787;
+    padding-bottom: 20px;
+    font-weight: bold;
+    color: #777;
+    letter-spacing: -1px
+}
+
+.main-single .post-image {
+    margin-bottom: 20px
+}
+
+/* End Main Single Page */
+
+/* Start Video Playlist Page */
+
+.video-playlist {
+  margin-top: 30px;
+}
+.video-playlist .video-box {
+  background-color: #fbfbfb;
+  padding: 15px;
+  margin-bottom: 20px 20px 10px;
+  overflow: hidden;
+  border: 1px dashed #d8d7d7;
+  border-right: 5px solid #bfbfbf;
+  border-radius: 20px;
+}
+.video-playlist .video-box .the-texts {
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 15px;
+}
+.video-playlist .video-box .the-texts h4 {
+  margin: 0 0 10px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.video-playlist .video-box .the-texts h4 a {
+  color: #333;
+}
+.video-playlist .video-box .the-texts h4 a:hover {
+  text-decoration: none;
+  color: #2782d5;
+}
+.video-playlist .video-box .the-image {
+  width: 180px;
+  float: right;
+}
+.video-playlist .video-box .the-image img {
+  max-width: 100%;
+  padding: 3px;
+  background-color: #FFF;
+  border: 1px solid #DDD;
+}
+.video-playlist .video-box .the-info {
+  width: calc(100% - 180px);
+  float: right;
+  padding: 8px;
+  margin: 0;
+  font-size: 14px;
+  font-family: Tahoma, Arial;
+}
+.video-playlist .video-box .the-info li {
+  padding-bottom: 10px;
+  color: #656565;
+}
+.video-playlist .video-box .the-info li i {
+  width: 20px;
+  height: 20px;
+  background-color: #efefef;
+  color: #333;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 50%;
+  font-size: 12px;
+}
+
+/* End Video Playlist Page */

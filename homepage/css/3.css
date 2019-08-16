@@ -1,0 +1,106 @@
+/*
+** Sheen Animation
+** Used In Tags Hover
+*/
+
+@-webkit-keyframes sheen {
+  100% {
+    -webkit-transform: rotateZ(60deg) translate(1em, -9em);
+    -moz-transform: rotateZ(60deg) translate(1em, -9em);
+    -o-transform: rotateZ(60deg) translate(1em, -9em);
+    transform: rotateZ(60deg) translate(1em, -9em); 
+  } 
+}
+
+@-moz-keyframes sheen {
+  100% {
+    -webkit-transform: rotateZ(60deg) translate(1em, -9em);
+    -moz-transform: rotateZ(60deg) translate(1em, -9em);
+    -o-transform: rotateZ(60deg) translate(1em, -9em);
+    transform: rotateZ(60deg) translate(1em, -9em); 
+  } 
+}
+
+@keyframes sheen {
+  100% {
+    -webkit-transform: rotateZ(60deg) translate(1em, -9em);
+    -moz-transform: rotateZ(60deg) translate(1em, -9em);
+    -o-transform: rotateZ(60deg) translate(1em, -9em);
+    transform: rotateZ(60deg) translate(1em, -9em); 
+  } 
+}
+
+/*
+** Image Flash
+** Used In Images
+*/
+
+@-webkit-keyframes flash {
+	0% {
+    zoom: 1;
+    filter: alpha(opacity=10);
+    opacity: .1;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@-moz-keyframes flash {
+	0% {
+    zoom: 1;
+    filter: alpha(opacity=10);
+    opacity: .1;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes flash {
+	0% {
+    zoom: 1;
+    filter: alpha(opacity=10);
+    opacity: .1;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+/*
+** Heartbeat
+** Used In Some Icons
+*/
+
+@-webkit-keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@-moz-keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

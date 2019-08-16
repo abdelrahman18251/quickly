@@ -1,0 +1,749 @@
+/* Start my framework */
+
+<header id="home" class="slider">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="owner">
+
+
+
+
+
+
+
+
+
+
+*{ box-sizing: border-box}
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+    word-wrap: break-word;
+    font-weight: 400;
+}
+.clearfix{clear:both}
+strong{color:#E3872D}
+@media (max-width:767px){
+    h2{font-size:24px;margin: 0 0 0 15px}
+    h4{font-size: 12px;margin: 0 0 0 15px}
+    .head::before{
+        width: 5px;
+        height: 40px
+    }
+    section{padding:60px 10px}
+}
+@media (min-width:768px){
+    .container{
+        width:750px
+    }
+    h2{font-size:30px;margin: 0 0 0 20px}
+    h4{font-size: 14px;margin: 0 0 0 20px}
+    .head::before{
+        width: 7px;
+        height: 50px;
+    }
+    section{padding:80px 20px}
+}
+@media (min-width:992px){
+    .container{
+        width:970px
+    }
+    h2{font-size:50px;margin: 0 0 0 25px}
+    h4{font-size: 16px;margin: 0 0 0 25px}
+    .head::before{
+        width: 7px;
+        height: 80px;
+    }
+    section{padding:100px 40px}
+}
+@media (min-width:1200px){
+    .container{
+        width:1170px
+    }
+}
+.container{margin: auto;padding-right:15px;padding-left:15px}
+
+.upper{text-transform:uppercase}
+.main-color{color: #E3872D}
+.overlay{
+    position: absolute;
+    top: 0;
+    bottom:0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(6, 27, 58, 0.9);
+    opacity: .8;
+    z-index: 1
+}
+a{text-decoration: none;color:#fff;transition: all .3s ease}
+a:hover{color:#E3872D}
+ul{list-style:none;margin: 0;padding: 0}
+h2{line-height: 1}
+h4{font-weight: normal;line-height: 1}
+button{
+    font-family: "Montserrat";
+    width: 180px;
+    height: 50px;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #E3872D;
+    border: none;
+    outline:none;
+    font-weight: 600;
+    border-radius: 4px;
+    margin-right:20px;
+    overflow: hidden;
+    position: relative;
+    z-index: 3;
+    cursor: pointer;
+}
+button span{z-index: 2;color: #fff}
+button::before{
+    position: absolute;
+    content: "";
+    height: 100%;
+    top:0;
+    left: -25%;
+    background-color: #041230;
+    transform: skew(50deg);
+    transition-duration: .6s;
+    z-index: -1;
+}
+button:hover::before{width: 180%;}
+label{
+    font-family: "Montserrat";
+    font-weight: 700;
+    font-size: 13px;
+    color: #000;
+    min-width: 75px;
+    display: inline-block;
+}
+.head{
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+}
+.head::before{
+    content: "";
+    position: absolute;
+    background-color: #E3872D;
+    left: 0;
+    display: inline-block
+}
+/* End my framwork */
+
+/* Start Slider */
+@media (max-width:767px){
+    .slider .container .owner h1{font-size:30px}
+    .slider .owner p{font-size: 16px}
+}
+@media (min-width:768px){
+    .slider .container .owner h1{font-size:40px}
+    .slider .owner p{font-size: 22px}
+}
+@media (min-width:992px){
+    .slider .container .owner h1{font-size:50px}
+    .slider .owner p{font-size: 24px}
+}
+@media (min-width:1200px){
+
+}
+
+.slider .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    text-align: center
+}
+.slider .container .owner{z-index: 2}
+.slider .container .owner h1{line-height:1; font-weight: normal;margin:10px 0 0 0}
+.slider .container .owner h1 span{font-weight:500}
+.slider .owner img{
+    width: 200px;
+    height:200px;
+    border-radius:50%;
+    border: 10px solid #828E9E
+}
+.slider .owner p{margin: 0}
+.slider .owner p .changed-text{font-weight: 900}
+.slider .container i {
+    z-index:2;
+    display: block;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    cursor: pointer    
+}
+/* End Slider */
+
+/* Start menu */
+@media (max-width:767px){
+    menu{
+        width:200px
+    }
+    menu ul{padding-left:50px}
+}
+@media (min-width:768px){
+    menu{
+        width:300px
+    }
+    menu ul{padding-left:80px}
+}
+@media (min-width:992px){
+
+}
+@media (min-width:1200px){
+
+}
+menu{
+    position: fixed;
+    top: 0px;
+    bottom: 0;
+    left: -300px;
+    background-color: #041230;
+    z-index: 999999;
+    color:#fff;
+    margin:0;
+    padding:0
+}
+menu .logo{
+    padding: 50px 0;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 50px;
+    border-bottom: 1px solid rgba(255,255,255,.1);
+}
+menu .logo i{font-size:130px}
+menu ul li{
+    font-family: "Montserrat";
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    position: relative;
+    display:block;
+    padding-bottom: 19px;
+}
+menu ul li .main:after{
+    content: "";
+    display: inline-block;
+    background-color: #E3872D;
+    width: 0px;
+    height:2px;
+    position: absolute;
+    top: 14px;
+    margin-left:10px;
+    transition: all .3s ease;
+    transform: translateY(-50%);
+}
+menu ul li .main:hover::after{width:35px}
+
+menu .fa-chevron-left,
+menu .fa-chevron-right
+{
+    position: absolute;
+    top:50%;
+    right: 0;
+    color: #fff;
+    display: inline-block;
+    padding: 10px;
+    border-radius:5px 0 0 5px;
+    background-color: #E3872D;
+    cursor: pointer
+}
+menu .fa-chevron-right{right:-29px;border-radius:0 5px 5px 0}
+/* End menu */
+
+/* Start go to up */
+.go-to-up .container{position: relative}
+.go-to-up button{
+    display:inline-block;
+    position: fixed;
+    right:30px;
+    bottom:30px;
+    background-color:#E3872D;
+    color:#fff;
+    width:40px;
+    height:40px;
+    padding:0;
+    margin:0;
+    border-radius: 5px;
+    z-index:200;
+    text-align: center;
+    display:none
+}
+.go-to-up button::before{left:-55%}
+.go-to-up button:hover::before{width:300%}
+/* End go to up */
+
+/* Start about */
+@media (max-width:767px){
+    .about-me .main-info{flex-wrap: wrap;justify-content:flex-start}
+    .main-info .img{
+        width: 400px;
+        height:400px;
+        margin-left: 20px;
+        margin-bottom:50px
+    }
+    .main-info .maini{width: 100%;margin-left:0}
+    .main-info .maini h3{
+        font-size:18px
+    }
+    .main-info .maini .changed-text2{display:block}
+    .main-info .maini p{
+        font-size:14px
+    }
+    .main-info .personal-left{width:100%;margin-bottom:30px}
+    .main-info .personal-right{width:100%}
+    .main-info .buttons{margin-top: 30px}
+    .main-info .buttons button{display:block;margin-bottom:30px}
+}
+@media (min-width:768px){
+    .about-me .main-info{flex-wrap: wrap;justify-content:flex-start}
+    .main-info .img{
+        width: 400px;
+        height:400px;
+        margin-left: 20px;
+        margin-bottom:50px
+    }
+    .main-info .maini{width: 100%;margin-left:0}
+    .main-info .maini h3{
+        font-size:22px
+    }
+    .main-info .maini p{
+        font-size:16px
+    }
+    .main-info .personal-left{float:left;width:50%;margin-bottom:0}
+    .main-info .personal-right{float:right;width:50%}
+    .main-info .buttons button{display:inline-block;margin-bottom:0}
+}
+@media (min-width:992px){
+    .about-me .main-info{flex-wrap: nowrap;justify-content: space-between}
+    .main-info .img{
+        width: 35%;
+        height:auto;
+        margin-left: 10px;
+        margin-bottom:0
+    }
+    .main-info .maini{width: 60%;margin-left:5%}
+    .main-info .maini h3{
+        font-size:24px
+    }
+}
+@media (min-width:1200px){
+
+}
+.about-me .main-info{display: flex;margin-top: 100px}
+.main-info .maini{overflow:hidden}
+.main-info .maini h3{
+    display: inline-block;
+    margin:0;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+}
+.changed-text2{font-weight:600}
+.main-info .maini p{color: #333;letter-spacing: .5px}
+.main-info .img{
+    border: 10px solid #041230;
+    position: relative;
+}
+.main-info .img img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -20px;
+    left: -20px
+}
+.main-info .personal-left{line-height: 2}
+.main-info .personal-right{line-height: 2}
+.main-info .buttons{margin-top: 30px}
+/* End about */
+
+/* Start abilities */
+@media (max-width:767px){
+    .abilities .container{flex-wrap: wrap}
+    .abilities .container span{font-size: 12px}
+    .abilities .container .some{flex-basis: 100%; margin-bottom:50px}
+    .abilities .container .some h3{font-size:20px;font-weight:600}
+    .abilities .container .persent{flex-basis: 100%;padding-left: 0}
+}
+@media (min-width:768px){
+    .abilities .container{flex-wrap: wrap}
+    .abilities .container span{font-size: 14px}
+    .abilities .container .some{flex-basis: 100%; margin-bottom:50px}
+    .abilities .container .some h3{font-size:24px;font-weight:500}
+    .abilities .container .persent{flex-basis: 100%;padding-left: 0}
+}
+@media (min-width:992px){
+    .abilities .container{flex-wrap: wrap}
+    .abilities .container .some{flex-basis: 39%; margin-bottom:0}
+    .abilities .container .persent{flex-basis: 61%;padding-left: 65px}
+}
+@media (min-width:1200px){
+    
+}
+.abilities{background-color:#F6F7FD;font-family: "Montserrat"}
+.abilities .container{display: flex}
+.abilities .container .some h3{
+    margin: 0 0 18px 0;
+    line-height:1
+}
+.abilities .container .some p{margin:0;padding: 0}
+.abilities .container .persent .tall{
+    background-color: #DDDEE3;
+    width:100%;
+    height: 5px;
+    position: relative;
+    margin-bottom: 16px;
+}
+.abilities .container .persent .main-span{
+    font-size: 13px;
+    font-weight: 700;
+    color: #000;
+    font-family: "Montserrat";
+    margin-bottom: 3px;
+    width: 100%;
+    display: inline-block;
+    position: relative;
+}
+.abilities .container .persent .main-span .exper{font-size:12px;font-weight:600}
+.abilities .container .persent .main-span .number{position: absolute;top: 0;right: 0}
+.abilities .container .persent div div{
+    position: absolute;
+    top:0;
+    left: 0;
+    display: inline-block;
+    height: 100%;
+    background-color: #000000
+}
+/* End abilities */
+
+/* Start Servises */
+@media (max-width:767px){
+    .amazing .item{width:100%}
+    .amazing .item .inner h3{font-size:18px}
+}
+@media (min-width:768px){
+    .amazing .item{width:50%;padding-left: 30px}
+    .amazing .item:first-of-type,
+    .amazing .item:nth-of-type(3),
+    .amazing .item:nth-child(5){
+    padding-left: 0
+    }
+    .amazing .item .inner h3{font-size:20px}
+}
+@media (min-width:992px){
+    .amazing .item{width:32%;padding-left: 30px}
+    .amazing .item .inner p{font-size:12px}
+    .amazing .item:nth-of-type(3),
+    .amazing .item:nth-child(5){
+        padding-left: 30px
+    }
+    .amazing .item:first-child,
+    .amazing .item:nth-child(4){
+    padding-left: 0
+    }
+    .amazing .item .inner h3{font-size:22px}
+}
+@media (min-width:1200px){
+    .amazing .item .inner p{font-size:14px}
+}
+.amazing{padding-top: 100px;display: flex;flex-wrap: wrap}
+.amazing .item{margin-bottom: 30px}
+
+.amazing .item .inner{
+    padding: 40px;
+    box-shadow: 0 0 20px rgba(0,0,0,.1);
+    transition:all .3s ease
+}
+.amazing .item .inner:hover{transform: translateY(-5px)}
+.amazing .item .inner i{display: block;margin-bottom:21px}
+.amazing .item .inner h3{
+    font-family: "Montserrat";
+    font-weight: 600;
+    color: #000000;
+    line-height: 1;
+}
+.amazing .item .inner p{margin: 0;padding: 0;}
+/* End Servises */
+
+/* Start Works */
+@media (max-width:767px){
+    .work-gallary .control ul{flex-wrap:wrap}
+    .work-gallary .control ul li{
+        font-weight: 600;
+        margin-right: 10px;
+        font-size:14px
+    }
+    .work-gallary .control ul .last-dev{display:block}
+    .work-gallary .gallary img{
+        margin-bottom: 2%;
+        width: 100%;
+        font-size:16px
+    }
+}
+@media (min-width:768px){
+    .work-gallary .control ul li{
+        font-weight: 700;
+        margin-right: 30px
+    }
+    .work-gallary .gallary img{
+        margin-bottom: 2%;
+        width: 48%;
+        margin-right:2%
+    }
+    .work-gallary .gallary img:nth-child(2),
+    .work-gallary .gallary img:nth-child(4),
+    .work-gallary .gallary img:last-child{
+        margin-right:0
+    }
+}
+@media (min-width:992px){
+    .work-gallary .gallary img{
+        margin-bottom: 2%;
+        width: 32%;
+        margin-right:2%
+    }
+    .work-gallary .gallary img:nth-child(2),
+    .work-gallary .gallary img:nth-child(4){
+        margin-right:2%
+    }
+    .work-gallary .gallary img:nth-child(3),
+    .work-gallary .gallary img:last-child{
+        margin-right:0
+    }
+}
+@media (min-width:1200px){
+    
+}
+.work-gallary{padding-top: 80px}
+.work-gallary .control ul{display:flex}
+.work-gallary .control ul li{
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+}
+.work-gallary .control ul li.active{color:#BD0A0D}
+.work-gallary .gallary{padding-top: 30px;display: flex;flex-wrap: wrap}
+.work-gallary .gallary img{display: block}
+/* End Works */
+
+/* Start testimonials */
+@media (max-width:767px){
+    .testi .inner p{font-size: 14px;font-weight: 500}
+    .testi .inner h5{font-size: 10px}
+    .bx-wrapper{
+        width: 100% !important
+    }
+    .bx-viewport{
+        width: 80% !important;
+    }
+}
+@media (min-width:768px){
+    .testi .inner p{font-size: 18px;font-weight: 600}
+    .testi .inner h5{font-size: 14px}
+    .bx-wrapper{
+        width: 90% !important
+    }
+    .bx-viewport{
+        width: 80% !important;
+    }
+}
+@media (min-width:992px){
+    .testi .inner p{font-size: 22px}
+    .testi .inner h5{font-size: 17px}
+    .bx-wrapper{
+        width: 90% !important
+    }
+    .bx-viewport{
+        width: 80% !important;
+    }
+}
+@media (min-width:1200px){
+    .testi .inner p{font-size: 24px;font-weight: 700}
+    .testi .inner h5{font-size: 18px}
+    .bx-wrapper{
+        width: 90% !important
+    }
+    .bx-viewport{
+        width: 71% !important;
+    }
+}
+.testi{
+    position: relative;
+    background:url("../images/cover.webp") no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #fff;
+    overflow: hidden
+}
+.testi .innner{display: flex;justify-content: center;padding: 100px 0 40px 0}
+.testi .inner{
+    width: 730px;
+    z-index: 2;
+    position: relative;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+.testi .inner p{line-height: 1.4}
+.testi .inner h5{font-weight: normal}
+.bx-wrapper{
+    background: transparent;
+    position: relative;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    height:100% !important;
+    display: flex;
+    justify-content: center;
+    margin:0
+}
+.bx-viewport{
+    z-index:2;
+    text-align: center;
+    height:100% !important
+}
+/* End testimonials */
+
+/* Start my numbers */
+@media (max-width:767px){
+    .my-numbers .container{flex-wrap:wrap}
+    .my-numbers .container div{
+        flex-basis: 60%;
+        border: none;
+        padding:50px 0 10px;
+        border-bottom: 1px solid #ccc;
+    }
+}
+@media (min-width:768px){
+    .my-numbers .container{flex-wrap:wrap}
+    .my-numbers .container div{
+        flex-basis: 50%;
+        border-right: 1px solid #ccc;
+        margin:50px 0 20px
+    }
+    .my-numbers .container div:nth-of-type(2){border: none}
+}
+@media (min-width:992px){
+    .my-numbers .container{flex-wrap:nowrap}
+    .my-numbers .container div{
+        width: 25%;
+        margin:50px 0 50px;
+        padding:30px 0
+    }
+    .my-numbers .container div:nth-of-type(2){border-right: 1px solid #ccc;}
+}
+@media (min-width:1200px){
+    
+}
+.my-numbers .container{display: flex;padding: 30px 0;justify-content:center}
+.my-numbers .container div{text-align: center}
+.my-numbers .container div:last-child{border: none}
+.my-numbers .container div h2{
+    font-size:40px;
+    font-weight:700;
+    font-family: "Montserrat";
+    color: #181a2f;
+    margin-bottom: 10px
+}
+.my-numbers .container div h5{
+    color: #666;
+    font-size:14px;
+    font-weight: 600;
+    line-height: 1;
+    margin: 0 
+}
+/* End my numbers */
+
+/* Start lates news */
+@media (max-width:767px){
+    .latest-news .news{justify-content: center !important; flex-wrap:wrap}
+    .latest-news .news .item{flex-basis: 100%;margin-bottom:50px}
+    .latest-news .news .item .inner{padding: 20px}
+    .latest-news .news .item .inner .date{font-weight:500}
+    .latest-news .news .item .inner h2{font-size:18px}
+}
+@media (min-width:768px){
+    .latest-news .news{flex-wrap:wrap}
+    .latest-news .news .item{flex-basis: 48%;margin-bottom:50px}
+    .latest-news .news .item:last-of-type{margin-bottom:0}
+    .latest-news .news .item .inner{padding: 20px}
+    .latest-news .news .item .inner .date{font-weight:600}
+    .latest-news .news .item .inner h2{font-size:20px}
+}
+@media (min-width:992px){
+    .latest-news .news{flex-wrap:nowrap}
+    .latest-news .news .item{flex-basis: 32%;margin-bottom:0}
+    .latest-news .news .item .inner{padding: 30px}
+    .latest-news .news .item .inner .date{font-weight:600;font-size:13px}
+    .latest-news .news .item .inner h2{font-size:19px}
+}
+@media (min-width:1200px){
+    .latest-news .news .item .inner .date{font-weight:600;font-size:14px}
+    .latest-news .news .item .inner h2{font-size:22px}
+}
+.latest-news{background-color: #F6F7FD;font-family: 'Montserrat', sans-serif}
+.latest-news .news{padding-top:80px;display:flex;justify-content: space-between}
+.latest-news .news .item{background-color:#fff}
+.latest-news .news .item img{width: 100%}
+.latest-news .news .item .inner .date{color:#333}
+.latest-news .news .item .inner h2{
+    color: #041230;
+    font-weight:600;
+    line-height:1.4;
+    margin:0
+}
+.latest-news .news .item .inner .words{color:#333;font-family: "Open Sans";margin:20px 0 30px}
+/* End latest news */
+
+/* Start contact me */
+@media (max-width:767px){
+    .contact-me .message-my .touch{margin-bottom:50px}
+}
+@media (min-width:768px){
+    
+}
+@media (min-width:992px){
+    .contact-me .message-my{display: flex}
+    .contact-me .message-my .touch{margin-bottom:0;padding-right:40px}
+}
+@media (min-width:1200px){
+    
+}
+.contact-me .message-my{padding-top: 80px}
+.contact-me .message-my .touch{flex-basis: 40%;padding-top: 30px}
+.contact-me .message-my .touch h2{
+    font-size:24px;
+    margin:0 0 30px 0;
+    line-height:1;
+    font-weight:500;
+    font-family: 'Montserrat', sans-serif;
+}
+.contact-me .message-my .touch p{margin-bottom: 20px}
+.contact-me .message-my .message{flex-basis: 60%}
+.contact-me .message-my .message input:last-child{width: 20%}
+.contact-me .message-my .message input,
+.contact-me .message-my .message textarea{
+    display: block;
+    width: 90%;
+    margin-bottom: 20px;
+    padding: 10px;
+    outline:none;
+    border:none;
+    border-bottom: 1px solid rgba(10,4,37,1);
+    font-size: 13px;
+    color: #333;
+    letter-spacing: 1.4px;
+    line-height: 1.6;
+    height: 44px;
+}
+.contact-me .message-my .message textarea{height:100px}
+/* End contact me */
+
+/* Start footer */
+footer{background-color: #041230;padding: 30px 0px;color: #fff;text-align: center}
+footer p{margin-bottom:10px}
+/* End footer */

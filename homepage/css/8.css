@@ -1,0 +1,104 @@
+/* Start Breadcrumb */
+
+.breadcrumb-holder {
+    background-color: #dcdcdc
+}
+
+.breadcrumb-holder .breadcrumb {
+    background: none;
+    margin: 0;
+    padding: 20px;
+    font-size: 16px;
+    font-weight: bold
+}
+
+@media (max-width: 767px) {
+    .breadcrumb > li {
+        display: block;
+        text-align: center
+    }
+    .breadcrumb > li:not(:first-child):before {
+        font-family: 'FontAwesome';
+        content: "\f103";
+        color: #757575;
+        display: block;
+        font-size: 20px;
+        margin: 10px
+    }
+}
+
+/* End Breadcrumb */
+
+/* Start Responsive Elements */
+
+@media (max-width: 767px) {
+    .text-center-xs {
+        text-align: center !important
+    }
+}
+
+/* End Responsive Elements */
+
+/* Start Two Line Heading */
+
+.two-line-heading {
+    font-size: 28px;
+    position: relative;
+    margin: 40px 0 80px;
+    font-weight: bold;
+    color: #333;
+}
+
+.two-line-heading:before,
+.two-line-heading:after {
+    content: '';
+    display: block;
+    background-color: #2782d5;
+    position: absolute;
+    right: 0
+}
+
+.two-line-heading:before {
+    width: 40px;
+    height: 4px;
+    bottom: -30px
+}
+
+.two-line-heading:after {
+    width: 80px;
+    height: 4px;
+    bottom: -42px
+}
+
+@media (max-width: 767px) {
+    .two-line-heading:before,
+    .two-line-heading:after {
+        right: auto;
+        left: 50%
+    }
+    .two-line-heading:before {
+        margin-left: -20px
+    }
+    .two-line-heading:after {
+        margin-left: -40px
+    }
+}
+
+/* End Two Line Heading */
+
+.comment-separator {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    border-bottom: 4px dashed #dcdcdc
+}
+
+/* Start Effects */
+
+.flash-effect:hover {
+    -webkit-animation: flash 3s;
+    -moz-animation: flash 3s;
+    -o-animation: flash 3s;
+    animation: flash 3s;   
+}
+
+/* End Effects */
