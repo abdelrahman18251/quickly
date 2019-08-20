@@ -3,9 +3,9 @@
 
 
 		 <script src="<?php echo $js ?>jquery-1.12.1.min.js"></script>
-		<script src="<?php echo $js ?>jquery-ui.min.js"></script>
+		<!-- <script src="<?php echo $js ?>jquery-ui.min.js"></script> -->
 		<script src="<?php echo $js ?>bootstrap.min.js"></script>
-		<script src="<?php echo $js ?>jquery.selectBoxIt.min.js"></script>
+		<!-- <script src="<?php echo $js ?>jquery.selectBoxIt.min.js"></script> -->
 		<script src="<?php echo $js ?>front.js"></script>
 
 
@@ -38,6 +38,24 @@ $('.jop').change(function() {
 	else if(val == 4){
 		$('.formNo14').slideDown(0);
 	}
+});
+
+
+$('.Brands').change(function() {
+	var val = $(this).val();
+	console.log('val');
+
+        $.ajax({
+            url: "ajax/getBrands.php",
+            type: 'GET',
+			data: { Brands_id: val },
+            success: function (data) {
+                console.log(data);
+				  document.getElementById("brndslct").innerHTML=data; 
+
+            }
+        });
+
 });
 </script>
 

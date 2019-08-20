@@ -18,6 +18,36 @@
 		return $all;
 
 	}
+
+
+
+	function getAllBrands() {
+
+		global $con;
+
+		$getAll = $con->prepare("SELECT * FROM `Brands`");
+
+		$getAll->execute();
+
+		$all = $getAll->fetchAll();
+
+		return $all;
+
+	}
+
+	function getmanufactureCountrys($Brands_id) {
+
+		global $con;
+
+		$getAll = $con->prepare("SELECT * FROM `manufactureCountrys` WHERE `Brands_id` = $Brands_id");
+
+		$getAll->execute();
+
+		$all = $getAll->fetchAll();
+
+		return $all;
+
+	}
 	
 	/*
 	** Check If User Is Not Activated
