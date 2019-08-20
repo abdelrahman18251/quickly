@@ -18,8 +18,7 @@
 		return $all;
 
 	}
-
-
+	
 
 	function getAllBrands() {
 
@@ -48,11 +47,26 @@
 		return $all;
 
 	}
+
+	function checkUsername($username) {
+
+		global $con;
+
+		$getAll = $con->prepare("SELECT * FROM `users` WHERE `Username` = '$username'");
+
+		$getAll->execute();
+
+		$all = $getAll->fetchAll();
+
+		return $all;
+
+	}
 	
 	/*
 	** Check If User Is Not Activated
 	** Function To Check The RegStatus Of The User
 	*/
+	
 
 	function checkUserStatus($user) {
 

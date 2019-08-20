@@ -3,6 +3,7 @@
 
 
 		 <script src="<?php echo $js ?>jquery-1.12.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
 		<!-- <script src="<?php echo $js ?>jquery-ui.min.js"></script> -->
 		<script src="<?php echo $js ?>bootstrap.min.js"></script>
 		<!-- <script src="<?php echo $js ?>jquery.selectBoxIt.min.js"></script> -->
@@ -11,6 +12,16 @@
 
 
 		<script>
+
+
+
+
+
+  $.validate({
+    lang: 'en',
+	modules : 'security'
+  });
+
 
 $('.types').change(function(x) {
 	var val = $(this).val();
@@ -51,13 +62,40 @@ $('.Brands').change(function() {
 			data: { Brands_id: val },
             success: function (data) {
                 console.log(data);
-				  document.getElementById("brndslct").innerHTML=data; 
+				 // document.getElementById("brndslct").innerHTML=data; 
+				  $('#brndslct').append(data)
 
             }
         });
 
 });
 </script>
+<script>
+$(document).on('submit','#signup',function(e) {
+	e.preventDefault();
+    var data = $(this).serialize();
+	
+    $.ajax({
+        data: data,
+        type: "post",
+		dataType: "json",
+        url: "ajax/signup.php",
+        success: function(data){
+			console.log(data);
+        // alert("Data: " + data);
+			jQuery.each(data, function(index, item) {
+				$('.errors').html('<div class="alert alert-info" role="alert">'+data[index]+'</div>')
+				
+			});
 
+        },
+    error: function(error){
+         console.log(error.responseText);
+		
+    }
+    });
+});
+
+</script>
 	</body>
 </html>
