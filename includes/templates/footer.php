@@ -54,14 +54,14 @@ $('.jop').change(function() {
 
 $('.Brands').change(function() {
 	var val = $(this).val();
-	console.log('val');
+	//console.log('val');
 
         $.ajax({
             url: "ajax/getBrands.php",
             type: 'GET',
 			data: { Brands_id: val },
             success: function (data) {
-                console.log(data);
+                //console.log(data);
 				 // document.getElementById("brndslct").innerHTML=data; 
 				  $('#brndslct').append(data)
 
@@ -72,30 +72,80 @@ $('.Brands').change(function() {
 </script>
 <script>
 $(document).on('submit','#signup',function(e) {
+	var username = ($('#username').val() || null);
+
+	var name = ($('#name').val()|| null);
+	var password = ($('#password').val() );
+	var password2 = ($('#password2').val());
+	var email = ($('#email').val() || null);
+	var governorate = ($('#governorate').val() || null);
+	var address = ($('#address').val() || null);
+	var mobile = ($('#mobile').val() || null);
+	var types = ($('#types').val() || null);
+	var brands = ($('#brands').val() || null);
+	var brand = ($('#brand').val() || null);
+	var jop = ($('#jop').val() || null);
+	var national_ID = ($('#national_ID').val() || null);
+	var edu = ($('#edu').val() || null);
+	var phone = ($('#phone').val() || null);
+	var Commercial_Registration = ($('#Commercial_Registration').val() || null);
+	var Issuer = ($('#Issuer').val() || null);
+	var formNo14 = ($('#formNo14').val() || null);
+
 	e.preventDefault();
-    var data = $(this).serialize();
-	
+    var serialize = $(this).serialize();
+	//console.log(serialize);
+	//alert(username)
+
     $.ajax({
-        data: data,
+        data : {
+			 username : username,
+			 name : name,
+			 password : password,
+			 password2 : password2,
+			 email : email,
+			 governorate : governorate,
+			 address : address,
+			 mobile : mobile,
+			 types : types,
+			 brands : brands,
+			 brand : brand,
+			 jop : jop,
+			 national_ID : national_ID,
+			 edu : edu,
+			 phone : phone,
+			 edu : edu,
+			 Commercial_Registration : Commercial_Registration,
+			 Issuer : Issuer,
+			 formNo14 : formNo14,},
         type: "post",
 		dataType: "json",
         url: "ajax/signup.php",
         success: function(data){
-			console.log(data);
+			//console.log(data);
         // alert("Data: " + data);
 			jQuery.each(data, function(index, item) {
 				$('.errors').html('<div class="alert alert-info" role="alert">'+data[index]+'</div>')
-				
+				if(data[index] == 'Records added successfully.'){
+					alert('تم الاضافة بنجاح');
+					localStorage.setItem('username', username);
+					localStorage.setItem('password', password);
+					location.reload();
+					
+
+				}
 			});
 
         },
     error: function(error){
-         console.log(error.responseText);
+         alert('عفواً حدث خطأ . تأكد من البيانات ثم عاود المحاولة');
 		
     }
     });
 });
 
+ $('#LoginUsername').val(localStorage.getItem('username'))
+ $('#LoginPassword').val(localStorage.getItem('password'))
 </script>
 	</body>
 </html>

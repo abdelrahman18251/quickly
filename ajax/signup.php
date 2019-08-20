@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $Date = date("Y-m-d H:i:s");
       $username 	= $_POST['username'];
         $name 	= $_POST['name'];
-        $password 	= $_POST['password'];
+        $password 	= sha1($_POST['password']);
         $password2 	= $_POST['password2'];
         $email 	= $_POST['email'];
         $governorate = $_POST['governorate'];
@@ -37,9 +37,16 @@ $Date = date("Y-m-d H:i:s");
             return trim(htmlspecialchars($str));
         }
 
-        if (strlen(validate($_POST['password'])) < 6) {
+        if (strlen(validate($_POST['password'])) <= 8) {
             $result['status'] = "error";
             $result['data'] = ["يرجي كتابة رقم سري اكبر من 6 أحرف"];
+            
+            array_push($errors,$result['data']);
+            //echo json_encode($result);
+        }
+        else if ($_POST['password'] != $_POST['password2']) {
+            $result['status'] = "error";
+            $result['data'] = ["يرجي التأكد من تطابق الرقم السري"];
             
             array_push($errors,$result['data']);
             //echo json_encode($result);
@@ -77,7 +84,6 @@ $Date = date("Y-m-d H:i:s");
         $result['data'] = ["$msg"];  
         array_push($errors,$result['data']);
         //echo json_encode($result);
-    
     }
     
     mysqli_close($conn);

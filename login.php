@@ -179,10 +179,10 @@
 	<!-- Start Login Form -->
 	<form class="login" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
 		<div class="input-container">
-			<input  class="form-control"  type="text"  name="username"  autocomplete="off" placeholder="Type your username"  required />
+			<input  class="form-control"  type="text" id="LoginUsername"  name="username"  autocomplete="off" placeholder="Type your username"  required />
 		</div>
 		<div class="input-container">
-			<input class="form-control" type="password" name="password" autocomplete="new-password" placeholder="Type your password" required />
+			<input class="form-control" type="password" id="LoginPassword" name="password" autocomplete="new-password" placeholder="Type your password" required />
 		</div>
 		<input class="btn btn-primary btn-block" name="login" type="submit" value="Login" />
 	</form>
@@ -196,32 +196,32 @@
 
 		<div class="input-group">
 			<span class="input-group-text">username</span>
-			<input type="text" class="form-control" name="username" data-validation="alphanumeric" data-validation-allowing="-_">
+			<input type="text" class="form-control" id="username" name="username" data-validation="alphanumeric" data-validation-allowing="-_">
 		</div>
 
 		<div class="input-group">
 			<span class="input-group-text">name</span>
-			<input type="text" class="form-control" name="name" data-validation="alphanumeric">
+			<input type="text" class="form-control" id="name" name="name" data-validation="required">
 		</div>
 
 		<div class="input-group">
 			<span class="input-group-text">password</span>
-			<input type="password" class="form-control" name="password" data-validation="length" data-validation-length="min8">
+			<input type="password" class="form-control" id="password" name="password" data-validation="length" data-validation-length="min8">
 		</div>
 
 		<div class="input-group">
 			<span class="input-group-text">password2</span>
-			<input type="password" class="form-control" name="password2"  data-validation="confirmation" data-validation-confirm="password">
+			<input type="password" class="form-control" id="password2" name="password2"  data-validation="confirmation" data-validation-confirm="password">
 		</div>
 
 		<div class="input-group">
 			<span class="input-group-text">email</span>
-			<input type="email" class="form-control" name="email" data-validation="email">
+			<input type="email" class="form-control" id="email" name="email" data-validation="email">
 		</div>
 
 		<div class="input-group">
 			<span class="input-group-text">Governorate</span>
-			<select class="form-control " id="" name="governorate" required="">
+			<select class="form-control " id="" name="governorate" required="" id="governorate">
 						<option value="" selected disabled="disabled"> اختر المحافظة</option>
 						<?php
 						$allCats = getAllFrom("*", "categories", "where 1", "", "ID", "ASC");
@@ -234,17 +234,17 @@
 
 		<div class="input-group">
 			<span class="input-group-text">address</span>
-			<input type="text" class="form-control" name="address" data-validation="alphanumeric" data-validation-allowing="-_">
+			<input type="text" class="form-control" id="address" name="address" data-validation="required">
 		</div>
 
 		<div class="input-group">
 			<span class="input-group-text">mobile</span>
-			<input type="text" class="form-control" name="mobile" maxlength="11" data-validation="number">
+			<input type="text" class="form-control" id="mobile" name="mobile" maxlength="11" data-validation="number">
 		</div>
 
 		<div class="input-group">
 		<span class="input-group-text">types</span>
-			<select class="form-control types" name="types" required="">
+			<select class="form-control types" name="types" required="" id="types">
 				<option value="" disabled="disabled" selected>اختر الشغلانه </option>
 				<option value="1"> اجهزة منزلية </option>
 				<option value="2">تكييف مركزي </option>
@@ -255,7 +255,7 @@
 
 			<div class="input-group">
 			<span class="input-group-text">types</span>
-				<select  class="form-control Brands" id="" name="brands" required="">
+				<select  class="form-control Brands" name="brands" required="" id="brands">
 						<option  value="" disabled="disabled" selected> اختر  نوع الماركة</option>
 						<?php
 						$allCats = getAllBrands();
@@ -269,14 +269,14 @@
 
 			<div class="input-group">
 			<span class="input-group-text brand">type</span>
-				<select  class="form-control " id="brndslct"  name="brand" required="">
+				<select  class="form-control " id="brndslct" id="brand"  name="brand" required="">
 					<option value="" disabled="disabled" selected>اختر النوع</option>
 				</select>
 			</div>
 
 			<div class="input-group">
 			<span class="input-group-text">الوظيفة</span>
-				<select class="form-control jop" name="jop" required="">
+				<select class="form-control jop" name="jop" id="jop" required="">
 					<option  value="" disabled="disabled" selected> اختر الوظيفة  </option> 
 					<option value="1"> فني متخصص </option> 
 					<option value="2"> مركز خدمو متخصص </option> 
@@ -292,12 +292,12 @@
 <!-- 1 -->
 <div class="input-group del national_ID">
 			<span class="input-group-text">الرقم القومي</span>
-			<input type="text" class="form-control" name="national_ID"  maxlength="14" data-validation="number">
+			<input type="text" class="form-control" name="national_ID" id="national_ID"  maxlength="14" data-validation="number">
 
 
 			<br>
 <label for="input-group-text">المؤهل</label>
-		<select class="form-control" name="edu" required="">
+		<select class="form-control" name="edu" required="" id="edu">
 				<option  value="" disabled="disabled" selected>اختار المؤهل</option>
 				<option value="مؤهل عالي">مؤهل عالي</option>
 				<option value="فوق المتوسط">فوق المتوسط</option>
@@ -317,23 +317,23 @@
 <!-- 2 -->
 		<div class="input-group del phone">
 					<span class="input-group-text"> الرقم الارضي </span>
-					<input type="text" class="form-control" name="phone"  maxlength="11" data-validation="number">
+					<input type="text" class="form-control" name="phone" id="phone" maxlength="11" data-validation="number">
 		</div>
 
 		<div class="input-group del Commercial_Registration">
 			<span class="input-group-text">السجل التجاري</span>
-			<input type="number" class="form-control" name="Commercial_Registration">
+			<input type="number" class="form-control" name="Commercial_Registration" id="Commercial_Registration">
 		</div>
 
 		<div class="input-group del Issuer">
 			<span class="input-group-text">جهة اصدار السجل التجاري </span>
-			<input type="text" class="form-control" name="Issuer">
+			<input type="text" class="form-control" name="Issuer" id="Issuer">
 		</div>
 
 <!-- 4 -->
 		<div class="input-group del formNo14">
 					<span class="input-group-text"> استمارة رقم 14 رقم</span>
-					<input type="number" class="form-control" name="formNo14">
+					<input type="number" class="form-control" name="formNo14" id="formNo14">
 		</div>
 		<input class="btn btn-success btn-block" name="signup" type="submit" value="Signup" />
 	</form>
