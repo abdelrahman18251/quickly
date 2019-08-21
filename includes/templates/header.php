@@ -15,6 +15,7 @@
 			<?php 
 				if (isset($_SESSION['user'])) { ?>
 
+				<div class="float-left">
 				<img class="my-image img-thumbnail img-circle" src="img.png" alt="" />
 				<div class="btn-group my-info">
 					<span class="btn btn-default dropdown-toggle" data-toggle="dropdown">
@@ -28,16 +29,12 @@
 						<li><a href="logout.php">Logout</a></li>
 					</ul>
 				</div>
+				</div>
 
-				<?php
+				
 
-				} else {
-			?>
-			<a href="login.php">
-				<span class="pull-right">Login/Signup</span>
-			</a>
-			<?php } ?>
-		</div>
+</div>		
+</div>
 	</div>
 	<nav class="navbar navbar-inverse">
 	  <div class="container">
@@ -52,16 +49,22 @@
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	      </button>
-	      <a class="navbar-brand" href="index.php">Homepage</a>
+	      <a class="navbar-brand" href="index.php">quickly</a>
+	
 	    </div>
 	    <div class="collapse navbar-collapse" id="app-nav">
 	      <ul class="nav navbar-nav navbar-right">
-	      <?php
-	      	$allCats = getAllFrom("*", "categories", "where parent = 0", "", "ID", "ASC");
+		  
+		  <a class="navbar-brand" href="#"><i class="fa fa-bell" aria-hidden="true"></i>  <span class="label label-danger" id="not_count"></span>  <?php  ?> </a>
+		  <?php
+		  
+		  $GovernorateID=$_SESSION['GovernorateID'];
+	      	$allCats = getAllFrom("*", "categories", "where ID = {$GovernorateID}", "", "ID", "ASC");
 			foreach ($allCats as $cat) {
+				//$cat['Name'] =$_SESSION['GovernorateName'];
 				echo 
 				'<li>
-					<a href="categories.php?pageid=' . $cat['ID'] . '">
+					<a href="index.php">
 						' . $cat['Name'] . '
 					</a>
 				</li>';
@@ -70,4 +73,19 @@
 	      </ul>
 	    </div>
 	  </div>
+
+	  <audio id="Audio">
+		<source src="chimes-glassy.ogg" type="audio/ogg">
+		<source src="chimes-glassy.mp3" type="audio/mpeg">
+		Your browser does not support the audio element.
+	  </audio>
+
 	</nav>
+	<?php
+
+				} else {
+			?>
+			<a href="login.php">
+				<span class="pull-right">Login/Signup</span>
+			</a>
+			<?php } ?>

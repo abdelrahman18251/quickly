@@ -14,9 +14,9 @@
 			$hashedPass = sha1($pass);
 			// Check If The User Exist In Database
 			$stmt = $con->prepare("SELECT 
-										UserID, Username, Password 
+										*
 									FROM 
-										users 
+										users
 									WHERE 
 										Username = ? 
 									AND 
@@ -28,14 +28,11 @@
 			if ($count > 0) {
 				$_SESSION['user'] = $user; // Register Session Name
 				$_SESSION['uid'] = $get['UserID']; // Register User ID in Session
+				$_SESSION['GovernorateID'] = $get['Governorate']; // Register User ID in Session
 				header('Location: index.php'); // Redirect To Dashboard Page
 				exit();
 			}
 		} else {
-			echo "<pre>" ;
-			print_r($_POST);
-			echo "</pre>";
-			
 			// $username 	= $_POST['username'];
 			// $password 	= $_POST['password'];
 			// $password2 	= $_POST['password2'];
@@ -221,12 +218,12 @@
 
 		<div class="input-group">
 			<span class="input-group-text">Governorate</span>
-			<select class="form-control " id="" name="governorate" required="" id="governorate">
+			<select class="form-control " name="governorate" required="" id="governorate">
 						<option value="" selected disabled="disabled"> اختر المحافظة</option>
 						<?php
 						$allCats = getAllFrom("*", "categories", "where 1", "", "ID", "ASC");
 						foreach ($allCats as $cat) {
-							echo '<option value="'.$cat['Name'].'"> ' . $cat['Name'] . '  </option>';
+							echo '<option data-value="'.$cat['ID'].'" value="'.$cat['ID'].'"> ' . $cat['Name'] . '  </option>';
 						}
 					?>
 			</select>
@@ -245,9 +242,9 @@
 		<div class="input-group">
 		<span class="input-group-text">types</span>
 			<select class="form-control types" name="types" required="" id="types">
-				<option value="" disabled="disabled" selected>اختر الشغلانه </option>
-				<option value="1"> اجهزة منزلية </option>
-				<option value="2">تكييف مركزي </option>
+				<option data-value="" value="" disabled="disabled" selected>اختر طبيعة العمل </option>
+				<option data-value="1" value="أجهزة منزلية">أجهزة منزلية</option>
+				<option data-value="2" value="تكييف مركزى">تكييف مركزى</option>
 			</select>
 		<div>
 
@@ -260,7 +257,7 @@
 						<?php
 						$allCats = getAllBrands();
 						foreach ($allCats as $cat) {
-							echo '<option value="'.$cat['id'].'"> ' . $cat['Brandsname'] . '  </option>';
+							echo '<option data-value="'.$cat['id'].'" value="' . $cat['Brandsname'] . '"> ' . $cat['Brandsname'] . '  </option>';
 						}
 					?>
 				</select>
@@ -269,7 +266,7 @@
 
 			<div class="input-group">
 			<span class="input-group-text brand">type</span>
-				<select  class="form-control " id="brndslct" id="brand"  name="brand" required="">
+				<select  class="form-control " id="brand"  name="brand" required="">
 					<option value="" disabled="disabled" selected>اختر النوع</option>
 				</select>
 			</div>
@@ -278,13 +275,13 @@
 			<span class="input-group-text">الوظيفة</span>
 				<select class="form-control jop" name="jop" id="jop" required="">
 					<option  value="" disabled="disabled" selected> اختر الوظيفة  </option> 
-					<option value="1"> فني متخصص </option> 
-					<option value="2"> مركز خدمو متخصص </option> 
-					<option value="3">مركز خدمة معتمد</option>
-					<option value="4">وكيلاء تجاريون</option>
-					<option value="5">وكلاء مصنعون</option>
-					<option class="del_ showif " value="6">فني كنترول</option>
-					<option class=" del_ showif"   value="7">فني كباسات</option>
+					<option data-value="1" value="فني متخصص">فني متخصص</option> 
+					<option data-value="2" value="مركز خدمة متخصص">مركز خدمة متخصص</option> 
+					<option data-value="3" value="مركز خدمة معتمد">مركز خدمة معتمد</option>
+					<option data-value="4" value="وكيلاء تجاريون">وكيلاء تجاريون</option>
+					<option data-value="5" value="وكلاء مصنعون">وكلاء مصنعون</option>
+					<option data-value="6" class="del_ showif " value="فني كنترول">فني كنترول</option>
+					<option data-value="7" class=" del_ showif"  value="فني كباسات">فني كباسات</option>
 				</select>
 			</div>
 

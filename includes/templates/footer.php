@@ -3,7 +3,8 @@
 
 
 		 <script src="<?php echo $js ?>jquery-1.12.1.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+		 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
 		<!-- <script src="<?php echo $js ?>jquery-ui.min.js"></script> -->
 		<script src="<?php echo $js ?>bootstrap.min.js"></script>
 		<!-- <script src="<?php echo $js ?>jquery.selectBoxIt.min.js"></script> -->
@@ -16,7 +17,6 @@
 
 
 
-
   $.validate({
     lang: 'en',
 	modules : 'security'
@@ -24,7 +24,7 @@
 
 
 $('.types').change(function(x) {
-	var val = $(this).val();
+	var val = $('option:selected', this).attr('data-value');
 	$('.del,.del_').slideUp(0);
 	
 	
@@ -34,7 +34,7 @@ $('.types').change(function(x) {
 }
 });
 $('.jop').change(function() {
-	var val = $(this).val();
+	var val = $('option:selected', this).attr('data-value');
 	$('.del').slideUp(0);
 
 	if((val == 1)||(val == 6)||(val == 7)){
@@ -52,9 +52,11 @@ $('.jop').change(function() {
 });
 
 
-$('.Brands').change(function() {
-	var val = $(this).val();
-	//console.log('val');
+$('.Brands').change(function(C) {
+	//var val = $(this).val();
+	var val = $('option:selected', this).attr('data-value');
+	
+	//console.log(val);
 
         $.ajax({
             url: "ajax/getBrands.php",
@@ -63,7 +65,7 @@ $('.Brands').change(function() {
             success: function (data) {
                 //console.log(data);
 				 // document.getElementById("brndslct").innerHTML=data; 
-				  $('#brndslct').append(data)
+				  $('#brand').append(data)
 
             }
         });
@@ -95,7 +97,7 @@ $(document).on('submit','#signup',function(e) {
 	e.preventDefault();
     var serialize = $(this).serialize();
 	//console.log(serialize);
-	//alert(username)
+	//alert(governorate)
 
     $.ajax({
         data : {
@@ -147,5 +149,92 @@ $(document).on('submit','#signup',function(e) {
  $('#LoginUsername').val(localStorage.getItem('username'))
  $('#LoginPassword').val(localStorage.getItem('password'))
 </script>
+
+
+<script type="text/javascript">
+
+
+
+
+// var Cat_ID = "<?php echo $_SESSION['GovernorateID'] ?>";
+
+// 		function sendRequest(){
+// 			$.ajax({
+// 				url: "https://quickly-9dbd8.firebaseio.com",
+// 				type: "post",
+// 				dataType: "json",
+// 				data: { Cat_ID: Cat_ID },
+// 				success: function(data){
+// 					setTimeout(function(){
+// 						console.log(data);
+// 						sendRequest(); //this will send request again and again;
+// 					}, 1000);
+// 				}
+// 			});
+// }
+
+// sendRequest()
+
+
+
+ var Cat_ID = "<?php echo $_SESSION['GovernorateID'] ?>";
+
+ localStorage.setItem("length", "0");
+		function sendRequest(data){
+    $.ajax({
+        url: "http://localhost/quickly/ajax/notification.php",
+		data: { cat_id: Cat_ID },
+		method:"POST",
+		dataType: "json",
+        success: 
+        function(result){
+			
+            var timeer = setTimeout(function(){
+				var len = result.data.length;
+				var x = parseInt(localStorage.getItem("length"))
+				console.log(len);console.log(x)
+				$('#not_count').html(len);
+				if(parseInt(len) != parseInt(x)){
+					if((parseInt(len) > parseInt(x))){
+						if(parseInt(x) !=0){
+						console.log('تم اضافة شخض');
+						document.getElementById('Audio').play();
+						swal("تم اضافة مهمة جديدة هل تريد مشاهدتها ؟", {
+						buttons: ["Oh noez!", true],
+						}).then(function(x) {
+							
+							if(x == true){
+								window.location.href = "index.php";
+							}
+						});
+						sendRequest(); //this will send request again and again;
+						}
+					}else{
+						console.log('تم حذف ');
+						sendRequest(); //this will send request again and again;
+					};
+				}else{
+					sendRequest(); //this will send request again and again;
+
+				}
+				localStorage.setItem("length", len);
+				
+
+				
+
+                
+				
+            }, 1000);
+        }
+    });
+}
+
+sendRequest()
+
+</script>
+
+
+<script src="https://quickly-9dbd8.firebaseio.com/.json?callback=sendRequest"></script>
+
 	</body>
 </html>
