@@ -75,7 +75,6 @@ $('.Brands').change(function(C) {
 <script>
 $(document).on('submit','#signup',function(e) {
 	var username = ($('#username').val() || null);
-
 	var name = ($('#name').val()|| null);
 	var password = ($('#password').val() );
 	var password2 = ($('#password2').val());
@@ -96,8 +95,6 @@ $(document).on('submit','#signup',function(e) {
 
 	e.preventDefault();
     var serialize = $(this).serialize();
-	//console.log(serialize);
-	//alert(governorate)
 
     $.ajax({
         data : {
@@ -124,8 +121,6 @@ $(document).on('submit','#signup',function(e) {
 		dataType: "json",
         url: "ajax/signup.php",
         success: function(data){
-			//console.log(data);
-        // alert("Data: " + data);
 			jQuery.each(data, function(index, item) {
 				$('.errors').html('<div class="alert alert-info" role="alert">'+data[index]+'</div>')
 				if(data[index] == 'Records added successfully.'){
@@ -192,25 +187,29 @@ $(document).on('submit','#signup',function(e) {
             var timeer = setTimeout(function(){
 				var len = result.data.length;
 				var x = parseInt(localStorage.getItem("length"))
-				console.log(len);console.log(x)
+				// console.log(len);console.log(x)
 				$('#not_count').html(len);
+
+			
 				if(parseInt(len) != parseInt(x)){
 					if((parseInt(len) > parseInt(x))){
 						if(parseInt(x) !=0){
-						console.log('تم اضافة شخض');
+						// console.log('تم اضافة شخض');
 						document.getElementById('Audio').play();
 						swal("تم اضافة مهمة جديدة هل تريد مشاهدتها ؟", {
-						buttons: ["Oh noez!", true],
+						buttons: ["الغاء", true],
 						}).then(function(x) {
 							
 							if(x == true){
+								window.location.href = "index.php";
+							}else{
 								window.location.href = "index.php";
 							}
 						});
 						sendRequest(); //this will send request again and again;
 						}
 					}else{
-						console.log('تم حذف ');
+						// console.log('تم حذف ');
 						sendRequest(); //this will send request again and again;
 					};
 				}else{
@@ -232,7 +231,78 @@ $(document).on('submit','#signup',function(e) {
 sendRequest()
 
 </script>
+<script>
+$(document).on('submit','#users',function(e) {
+alert()
+	var name = ($('#name').val());
+	var governorate = ($('#governorate').val());
+	var address = ($('#address').val() );
+	var mobile = ($('#mobile').val() );
+	var types = ($('#types').val() );
+	var brands = ($('#brands').val() );
+	var brand = ($('#brand').val() );
 
+	var phone = ($('#phone').val() );
+	var defect = ($('#defect').val());
+	e.preventDefault();
+	if(defect == "")
+	{
+		alert('تأكد  ادخال العيب الظاهر:');
+		return false
+	}
+	if(brand == "")
+	{
+		alert('تأكد  ادخال  brand:');
+		return false
+	}
+	if(brands == "")
+	{
+		alert('تأكد  ادخال  brands:');
+		return false
+	}
+	if(governorate == "")
+	{
+		alert('تأكد  ادخال  governorate:');
+		return false
+	}
+	if(name == "")
+	{
+		alert('تأكد  ادخال  name:');
+		return false
+	}
+    $.ajax({
+        data : {
+			 name : name,
+			 governorate : governorate,
+			 address : address,
+			 mobile : mobile,
+			 types : types,
+			 brands : brands,
+			 brand : brand,
+			 phone : phone,
+			 defect : defect},
+        type: "post",
+		dataType: "json",
+        url: "ajax/adddefect.php",
+        success: function(data){
+			console.log(data)
+			jQuery.each(data, function(index, item) {
+				$('.errors').html('<div class="alert alert-info" role="alert">'+data[index]+'</div>')
+				if(data[index] == 'Records added successfully.'){
+					alert(' تم الاضافة بنجاح');
+					
+					location.reload();
+				}
+			});
+
+        },
+    error: function(error){
+         alert('عفواً حدث خطأ . تأكد من البيانات ثم عاود المحاولة');
+		
+    }
+    });
+});
+</script>
 
 <script src="https://quickly-9dbd8.firebaseio.com/.json?callback=sendRequest"></script>
 
